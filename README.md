@@ -63,7 +63,7 @@ Have a local clone of the boilerplate repo
 
 ###Session Two:
 * Session one recap
-* Intro to networking: http + websockets
+* Intro to networking: http + websockets on Node.js
 * OpenCV and computer vision overview
 * Code walkthrough for websockets + OpenCV
 * Workshop time + Q & A
