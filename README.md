@@ -1,7 +1,7 @@
 tadaex14
 ========
 
-Code base for a 2-session workshop on realtime web-based audiovisual systems at TADAEX '14 (Tehran Annual Digital Arts Festival 2014 @ Darbast Projects)
+Code base, slides and materials for a 2-session workshop on realtime web-based audiovisual systems at TADAEX '14 (Tehran Annual Digital Arts Festival 2014 @ Darbast Projects)
 
 ### Workshop Title:
 Realtime web-based audiovisual systems
