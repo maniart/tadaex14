@@ -18,17 +18,17 @@ Participants should be familiar with basic web technologies or have basic unders
 * A few smart phones (if participants have smart phones, that's fine) 
 
 ### Prerequisites:
-* #####Knowledge:
+* **Knowledge:**
 	* Basic programming knowledge 
 	* Basic understanding of web technologies
 	* Basic command line skills
 	* Basic git knowledge 
-* #####Software:
+* **Software:**
 	* Latest version of Google Chrome (~37)
 	* git + github account
 	* node.js + npm
 	* IDE (sublime text, textmate, coda, textWrangler notepad++, atom, etc.)
-* #####Hardware:
+* **Hardware:**
 	* Computer - Laptop
 	* Web cam (optional - as input device)
 	* Smartphones (optional - as input device)
