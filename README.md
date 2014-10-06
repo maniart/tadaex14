@@ -7,7 +7,7 @@ Code base, slides and materials for a 2-session workshop on realtime web-based a
 Realtime web-based audiovisual systems
 
 ### Description:
-Through examples and hands-on experiments, in two sessions we will explore the basics of creating engaging and playful systems for creating collaborative realtime audiovisual systems on the web. We will look at inspiring examples and exmploy a number of techniques and libraries to turn our browser into an interactive canvas. Two sessions is not enough time to delve deep into both theory and practice, but it should provide an intro-level course to get started experimenting and creating.
+Through examples and hands-on experiments, in two sessions we will explore the basics of creating engaging and playful systems of collaborative realtime audiovisual experiences on the web. We will look at inspiring examples and explore a number of techniques and libraries to turn our browser into an interactive canvas. Two sessions is not enough time to delve deep into both theory and practice, but it should provide an intro-level course to get a headstart in experimenting and creating.
 
 ### Requirements:
 Participants should be familiar with basic web technologies or have basic understanding of programming concepts. Moreover, participants should be curious to write experimental software as creative medium.  
