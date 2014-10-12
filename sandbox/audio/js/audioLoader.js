@@ -11,27 +11,22 @@ app.audioLoader = (function() {
 	// comment here
 	app.context = app.context || new AudioContext();
 
+
 	// comment here
-	var load = function(url) {
-		// comment
-		var request = new XMLHttpRequest();
-		// comment
-		var onError = function() {
-			console.log('Woops. Failed to load audio file.');
-		};
-		// comment
-		request.open('GET', url, true);
-		// comment
-		request.responseType = 'arraybuffer';
-		// comment
-		request.onload = function() {
-			//debugger;
-			console.log(request.response);
-			app.context.decodeAudioData(request.response, function(buffer) {
-				app.events.audioLoaded.dispatch(buffer);
-			}, onError);
-		};
-		request.send();
+	var load = function(loadArray) {
+		// comment here
+		var bufferLoader = new app.BufferLoader(
+			// comment here
+			app.context,
+			// comment here
+			loadArray,
+			// comment here
+			function(bufferList) {
+				app.events.audioLoaded.dispatch(bufferList);
+			}
+
+		); 
+		bufferLoader.load();
 	};
 
 	// comment

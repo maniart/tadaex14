@@ -9,7 +9,7 @@ var app = app || {};
 app.audioPlayer = (function() {
 
 	// comment
-	var play = function(buffer) {
+	var play = function(buffer, time) {
 		
 		// creates a sound source
 		var source = app.context.createBufferSource();
@@ -20,8 +20,12 @@ app.audioPlayer = (function() {
 		// connect the source to the context's destination (the speakers)
 		source.connect(app.context.destination);
 
-		// start playing the audio
-		source.start(0);
+		// comment
+		if (!source.start) {
+			source.start = source.noteOn;			
+		}
+		// start playing the audio at the given time
+		source.start(time);
 	};
 
 	// comment
