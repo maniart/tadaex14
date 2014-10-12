@@ -56,7 +56,7 @@ Have a local clone of the boilerplate repo
 
 ###Session One:
 * Theory and intro: Slides
-* Intro to Canvas and two.js library
+* Intro to Canvas, two.js and tween.js libraries
 * Intro to Web Audio API
 * Code walkthrough for two.js + Web Audio API experiment
 * Workshop time + Q & A
