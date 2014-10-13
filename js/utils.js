@@ -18,6 +18,7 @@ app.utils = (function() {
 		return	'rgb(' + app.utils.random(255) + ',' + app.utils.random(255) + ',' +  app.utils.random(255)+ ')';
 	};
 
+
 	// comment
 	return {
 		random : random,
