@@ -20,9 +20,24 @@ var playRandomNote = function(notes) {
 
 // comment
 var two = new Two({ fullscreen: true }).appendTo(document.body);
-two.scene.translation.set(two.width/2, two.height/2);
+//two.scene.translation.set(two.width/2, two.height/2);
 
+// comment
+var C = two.makeGroup();
+var D = two.makeGroup();
+var E = two.makeGroup();
+var F = two.makeGroup();
+var G = two.makeGroup();
+var A = two.makeGroup();
+var B = two.makeGroup();
 
+C.translation.set(two.width / 7 - two.width / 14, two.height /2 );
+D.translation.set((two.width / 7) * 2 - two.width / 14, two.height /2 );
+E.translation.set((two.width / 7) * 3 - two.width / 14, two.height /2 );
+F.translation.set((two.width / 7) * 4 - two.width / 14, two.height /2 );
+G.translation.set((two.width / 7) * 5 - two.width / 14, two.height /2 );
+A.translation.set((two.width / 7) * 6 - two.width / 14, two.height /2 );
+B.translation.set(two.width - two.width / 14, two.height /2 );
 
 
 // comment
@@ -42,8 +57,39 @@ var generatePoints = function(amount, radius) {
 };
 
 // comment
-var drawPolygon = function(sides) {
-	var polygon = two.makePolygon(generatePoints(sides, 4), false);
+var drawPolygonForNote = function(note) {
+
+	switch(note) {
+		case 'C':
+			var polygon = two.makePolygon(generatePoints(4, 4), false);
+			polygon.addTo(C);
+			break;
+		case 'D':
+			var polygon = two.makePolygon(generatePoints(5, 4), false);
+			polygon.addTo(D);
+			break;
+		case 'E':
+			var polygon = two.makePolygon(generatePoints(6, 4), false);
+			polygon.addTo(E);
+			break;
+		case 'F':
+			var polygon = two.makePolygon(generatePoints(7, 4), false);
+			polygon.addTo(F);
+			break;
+		case 'G':
+			var polygon = two.makePolygon(generatePoints(8, 4), false);
+			polygon.addTo(G);
+			break;
+		case 'A':
+			var polygon = two.makePolygon(generatePoints(9, 4), false);
+			polygon.addTo(A);
+			break;
+		case 'B':
+			var polygon = two.makePolygon(generatePoints(10, 4), false);
+			polygon.addTo(B);
+			break;
+	}
+	
 	var translateX = app.utils.random(two.width);
 	var translateY = app.utils.random(two.height);
 	polygon.fill = app.utils.randomColor();
@@ -81,47 +127,37 @@ app.events.audioLoaded.add(function(loadedArray) {
 		// comment
         switch(event.which) {
         	case 81:
-        		console.log('q');
         		app.audioPlayer.play(loadedArray[2]);
-        		drawPolygon(4);
+        		drawPolygonForNote('C');
         		break;
 
         	case 87:
-        		console.log('w');
         		app.audioPlayer.play(loadedArray[3]);
-        		drawPolygon(5);
+        		drawPolygonForNote('D');
         		break;
         	case 69:
-        		console.log('e');
         		app.audioPlayer.play(loadedArray[4]);
-        		drawPolygon(6);
+        		drawPolygonForNote('E');
         		break;
         	case 82:
-        		console.log('r');
         		app.audioPlayer.play(loadedArray[5]);
-        		drawPolygon(7);
+        		drawPolygonForNote('F');
         		break;
         	case 84:
-        		console.log('t');
         		app.audioPlayer.play(loadedArray[6]);
-        		drawPolygon(8);
+				drawPolygonForNote('G');        		
         		break;
         	case 89:
         		console.log('y');
         		app.audioPlayer.play(loadedArray[0]);
-        		drawPolygon(9);
+        		drawPolygonForNote('A');
         		break;
         	case 85:
         		console.log('u');
         		app.audioPlayer.play(loadedArray[1]);
-        		drawPolygon(10);
+        		drawPolygonForNote('B');
         		break;
         }
-
-
-		//playRandomNote(loadedArray);
-		//drawRandomCircle();
-
 	
 	});
 
