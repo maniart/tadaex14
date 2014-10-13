@@ -8,18 +8,32 @@ var app = app || {};
 // comment
 app.audioPlayer = (function() {
 
+	if (!app.context.createGain) {
+		app.context.createGain = app.context.createGainNode;	
+	}
+    
+	var gain = app.context.createGain();
 	// comment
-	var play = function(buffer, time) {
+	var play = function(buffer, time, gainNode) {
 		
 		// creates a sound source
 		var source = app.context.createBufferSource();
+	
 		
 		// tell the source which sound to play
 		source.buffer = buffer;
 		
-		// connect the source to the context's destination (the speakers)
-		source.connect(app.context.destination);
+		if(gainNode) {
+			console.log('gain node present');
+			source.connect(gain);
+			gain.connect(app.context.destination);
+		} else {
+			// connect the source to the context's destination (the speakers)
+			source.connect(app.context.destination);
+	
+		}
 
+		
 		// comment
 		if (!source.start) {
 			source.start = source.noteOn;			
@@ -58,7 +72,9 @@ app.audioPlayer = (function() {
 		play : play,
 
 		// comment
-		repeat : repeat
+		repeat : repeat,
+
+		gain : gain
 		
 	};
 

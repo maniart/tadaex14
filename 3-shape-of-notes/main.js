@@ -2,25 +2,9 @@
 * comment here
 */
 
-var playRandomNoteAndDraw
-// comment
-var playRandomNote = function(notes) {
-
-	// comment
-	var index = app.utils.random(notes.length - 1);
-
-	// comment
-	var note = notes[index];
-
-	// comment
-	app.audioPlayer.play(note);
-
-};
-
 
 // comment
 var two = new Two({ fullscreen: true }).appendTo(document.body);
-//two.scene.translation.set(two.width/2, two.height/2);
 
 // comment
 var C = two.makeGroup();
@@ -127,34 +111,34 @@ app.events.audioLoaded.add(function(loadedArray) {
 		// comment
         switch(event.which) {
         	case 81:
-        		app.audioPlayer.play(loadedArray[2]);
+        		app.audioPlayer.play(loadedArray[2], 0);
         		drawPolygonForNote('C');
         		break;
 
         	case 87:
-        		app.audioPlayer.play(loadedArray[3]);
+        		app.audioPlayer.play(loadedArray[3], 0);
         		drawPolygonForNote('D');
         		break;
         	case 69:
-        		app.audioPlayer.play(loadedArray[4]);
+        		app.audioPlayer.play(loadedArray[4], 0);
         		drawPolygonForNote('E');
         		break;
         	case 82:
-        		app.audioPlayer.play(loadedArray[5]);
+        		app.audioPlayer.play(loadedArray[5], 0);
         		drawPolygonForNote('F');
         		break;
         	case 84:
-        		app.audioPlayer.play(loadedArray[6]);
+        		app.audioPlayer.play(loadedArray[6], 0);
 				drawPolygonForNote('G');        		
         		break;
         	case 89:
         		console.log('y');
-        		app.audioPlayer.play(loadedArray[0]);
+        		app.audioPlayer.play(loadedArray[0], 0);
         		drawPolygonForNote('A');
         		break;
         	case 85:
         		console.log('u');
-        		app.audioPlayer.play(loadedArray[1]);
+        		app.audioPlayer.play(loadedArray[1], 0);
         		drawPolygonForNote('B');
         		break;
         }

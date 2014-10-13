@@ -12,7 +12,7 @@ var playRandomNote = function(notes) {
 	var note = notes[index];
 
 	// comment
-	app.audioPlayer.play(note);
+	app.audioPlayer.play(note, 0);
 
 };
 
