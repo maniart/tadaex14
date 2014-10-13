@@ -13,6 +13,10 @@ app.audioPlayer = (function() {
 	}
     
 	var gain = app.context.createGain();
+	// Create the filter
+	var biQuad = app.context.createBiquadFilter();
+	
+	
 	// comment
 	var play = function(buffer, time, gainNode) {
 		
@@ -25,8 +29,11 @@ app.audioPlayer = (function() {
 		
 		if(gainNode) {
 			console.log('gain node present');
-			source.connect(gain);
-			gain.connect(app.context.destination);
+			//source.connect(gain);
+			source.connect(biQuad);
+			biQuad.connect(app.context.destination);
+			biQuad.type = 0; // Low-pass filter. See BiquadFilterNode docs
+			biQuad.frequency.value = 440; // Set cutoff to 440 HZ
 		} else {
 			// connect the source to the context's destination (the speakers)
 			source.connect(app.context.destination);
@@ -74,7 +81,9 @@ app.audioPlayer = (function() {
 		// comment
 		repeat : repeat,
 
-		gain : gain
+		gain : gain,
+
+		biQuad : biQuad
 		
 	};
 

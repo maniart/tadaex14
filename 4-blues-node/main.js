@@ -88,8 +88,10 @@ app.events.audioLoaded.add(function(loadedArray) {
 	// comment
 	document.addEventListener('mousemove', function(event) {
 		
-		var mouseGain = app.utils.map(event.x, 0, two.width, 0, 1);
-		app.audioPlayer.gain.gain.value = mouseGain;
+		var mouseGain = app.utils.map(event.x, 0, two.width, 0, 400);
+		var mouseGainY = app.utils.map(event.y, 0, two.height, 0, 400);
+		app.audioPlayer.biQuad.Q.value = mouseGain;
+		app.audioPlayer.biQuad.frequency.value = mouseGainY;
 
 		var green = Math.ceil(app.utils.map(event.x, 0, two.width, 0, 255));
 		var blue = Math.ceil(app.utils.map(event.y, 0, two.height, 0, 255));
