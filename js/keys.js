@@ -118,8 +118,8 @@ app.keys = (function() {
 
         }
 
-        console.log(index);
-        app.audioLoader.load('samples/Yamaha-SY-35-Clarinet-C5.wav');
+        //console.log(index);
+        
         
     });
 
