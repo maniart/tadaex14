@@ -38,11 +38,14 @@ var times = 0;
 // window width
 var width = window.innerWidth;
 
+// window height
+var height = window.innerHeight;
+
 // dividing the width of screen by four to define regions
 var quarter = width / 4;
 
-// window height
-var height = window.innerHeight;
+// current section
+var currentClass;
 
 
 // play the waveform when key pressed
@@ -64,15 +67,22 @@ document.addEventListener('keydown', function(event) {
 // define the type of wave based on mouse potiion on the screen
 document.addEventListener('mousemove', function(event) {
 	
+	console.log(event);
 	if(event.x < quarter) {
 		oscillator.type = 'sine';
+		currentClass = '.sine';
 	} else if(event.x > quarter && event.x < quarter * 2) {
-		oscillator.type = 'triangle';
-	} else if(event.x > quarter * 2 && event.x < quarter * 3) {
 		oscillator.type = 'square';
+		currentClass = '.square';
+	} else if(event.x > quarter * 2 && event.x < quarter * 3) {
+		oscillator.type = 'triangle';
+		currentClass = '.triangle';
 	} else {
 		oscillator.type = 'sawtooth';
-	}	
+		currentClass = '.sawtooth';
+	}
 
+	oscillator.detune.value = Math.pow(2, 1/12) * app.utils.map(event.y, 0, height, 0, 1000);
+	document.querySelector(currentClass).style.opacity = app.utils.map(event.y, 0, height, 0, 1);
 });
 
